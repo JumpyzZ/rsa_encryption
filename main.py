@@ -4,7 +4,7 @@
 #   会使用填在 lianwei_key_pub 里的RSA公钥去加密
 #   与它在同一路径下、已保存关闭、扩展名为.xlsx的excel文件里的 第一个sheet、叫为「明文手机号」的列
 # 脚本输出：
-#   会在excel
+#   会在有「明文手机号」的excel文件里新增一列「密文手机号」，内容是 明文手机号」被lianwei_key_pub公钥加密后的密文️
 
 
 from cryptography.hazmat.primitives import hashes
@@ -116,8 +116,8 @@ if __name__ == '__main__':
     # ciphertext_base64 = rsa_encrypt('17723986404', public_key_instance)
     # print(ciphertext_base64)
 
-    public_key_ins = get_public_key_instance_from_str(test_key_pub)
-    # public_key_ins = get_public_key_instance_from_str(lianwei_key_pub)
+    # public_key_ins = get_public_key_instance_from_str(test_key_pub)
+    public_key_ins = get_public_key_instance_from_str(lianwei_key_pub)
 
     print('读取 {current_dir} 文件夹下所有xlsx文件...'.format(current_dir=os.getcwd()))
     for file_name in os.listdir():
