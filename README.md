@@ -12,7 +12,14 @@
 
 ## 怎么用
 
-1. 把用来加密的公钥填到 `lianwei_key_pub`，下面是示例，不要直接用
+1. 安装依赖
+
+```python
+pip install pandas
+pip install pycrypto
+```
+
+2. 把用来加密的公钥填到 `lianwei_key_pub`，下面是示例，不要直接用
 
 ```python
 lianwei_key_pub = '''
@@ -26,18 +33,18 @@ IQIDAQAB
 '''
 ```
 
-2. 把脚本和有「明文手机号」，待加密的xlsx文件放在一个文件夹下
+3. 把脚本和有「明文手机号」，待加密的xlsx文件放在一个文件夹下
 
 ![file_example](file_example.png)
 
-3. 运行`main.py`
+4. 运行`main.py`
 
 ```
 cd /Users/zhu/Desktop/rsa_encryption
 python main.py
 ```
 
-4. 输出
+5. 输出
 
 ```
 使用公钥:
@@ -63,7 +70,7 @@ IQIDAQAB
 
 ## 输出文件样例
 
-会在有「明文手机号」的excel文件里新增一列「密文手机号」，内容是 明文手机号」被lianwei_key_pub公钥加密后的密文️
+会在有「明文手机号」的excel文件里新增一列「密文手机号」，内容是 明文手机号」被`lianwei_key_pub`公钥加密后的密文️
 
 
 
